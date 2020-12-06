@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'Open Sans ExtraBold';
+  font-display: swap;
+  src: local('Open Sans ExtraBold'), url('./OpenSans-ExtraBold.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans Regular';
+  font-display: swap;
+  src: local('Open Sans Regular'), url('./OpenSans-Regular.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans w700';
+  font-display: swap;
+  src: local('Open Sans w700'), url('./OpenSans-w700.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+
+.preload-fonts {
+  position: absolute;
+  bottom: 100vh;
+  right: 100vw;
+}
+.open-sans-extra-bold {
+  font-family: 'Open Sans ExtraBold';
+}
+
+.open-sans-regular {
+  font-family: 'Open Sans Regular';
+}
+
+.open-sans-w700 {
+  font-family: 'Open Sans w700';
+}
