@@ -1,4 +1,11 @@
-# Phaser 3.24.1 Template
+# Phaser Lab 3.24.1 Template
+
+Площадка для экспериментов с Phaser
+
+```
+npm install
+npm run start
+```
 
 Шаблон игры на Phaser c 4 сценами
 - Boot (загрузка минимальных ассетов, подготовка данных)
