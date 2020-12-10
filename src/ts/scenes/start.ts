@@ -17,9 +17,6 @@ export class Start extends Phaser.Scene {
     this.createBg();
     this.createLogo();
     this.createPlayButton();
-
-    // todo remove it for start game
-    this.scene.start(constants.scenes.game);
   }
 
   private createBg() {
