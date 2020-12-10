@@ -11,7 +11,7 @@ export class Game extends Phaser.Scene {
   init() {}
 
   create() {
-    this.cameras.main.setBackgroundColor('#xxxxxx');
+    this.cameras.main.setBackgroundColor('#DEDEDE');
     console.log('start game');
 
     // обычный спрайт из svg
@@ -32,6 +32,17 @@ export class Game extends Phaser.Scene {
     </svg>`; */
 
     const svgCode2 = `<rect width="300" height="100" fill="#dedede" rx='12' ry='12'  />`;
+    const svgCode4 = `<svg height="140" width="140"  xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="f3" x="0" y="0" width="200%" height="200%">
+      <feOffset result="offOut" in="SourceAlpha" dx="20" dy="20" />
+      <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+    </filter>
+  </defs>
+  <rect width="90" height="90" stroke="green" stroke-width="3" fill="yellow" filter="url(#f3)" />
+</svg>
+`;
     const svgCode3 = `
 <svg width="324" height="90" viewBox="0 0 162 45" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0)">
@@ -87,11 +98,18 @@ export class Game extends Phaser.Scene {
 </svg>
 `;
 
-    const t2 = Date.now();
+    let T = Date.now();
     SvgPhaser.createTextureFromSvg(this, svgCode3, (key: string) => {
       const image2 = scene.add.image(400, 400, key);
       image2.setOrigin(0, 0);
-      console.log(`time svgCode create = ${Date.now() - t2} ms`);
+      console.log(`time svgCode create = ${Date.now() - T} ms`);
+    });
+
+    T = Date.now();
+    SvgPhaser.createTextureFromSvg(this, svgCode4, (key: string) => {
+      const image2 = scene.add.image(420, 340, key);
+      image2.setOrigin(0, 0);
+      console.log(`time svgCode create = ${Date.now() - T} ms`);
     });
   }
 }
