@@ -102,7 +102,7 @@ export class ButtonFabric {
      */
     static makeSwitch(objectOn: IButtonAble, objectOff: IButtonAble, onClick: ISwitchCallback) {
 
-        let isOn = false;
+        let isOn = true;
 
         function switchButton() {
             isOn = !isOn;
@@ -111,7 +111,9 @@ export class ButtonFabric {
             onClick(isOn);
         }
 
-        switchButton(); // инициализируем состояние и видимость
+        // инициализируем состояние и видимость
+        objectOn.setVisible(isOn);
+        objectOff.setVisible(!isOn)
 
         ButtonFabric.makeButton(objectOn, () => {
             switchButton();
@@ -123,7 +125,7 @@ export class ButtonFabric {
     }
 }
 
-
+// интерфейс функции
 export interface ISwitchCallback {
     (isOn: boolean): any
 }
