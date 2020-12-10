@@ -1,6 +1,6 @@
-import { MaskContainer } from '~/helpers/Mask/MaskContainer';
-import { ScrollableContent } from '~/helpers/Mask/ScrollContainer';
-import { WorldPosition } from '~/helpers/Mask/WorldPosition';
+import { MaskContainer } from './MaskContainer';
+import { ScrollableContent } from './ScrollContainer';
+import { WorldPosition } from './WorldPosition';
 
 export type ScrollBarElement =
   | Phaser.GameObjects.Container

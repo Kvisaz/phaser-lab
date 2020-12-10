@@ -11,6 +11,9 @@ export class Game extends Phaser.Scene {
   create() {
     console.log('start game');
 
+    // обычный спрайт из svg
+    const svgImage = this.add.image(0, 0, constants.images.preload.logo);
+
     /*     this.input.on(Phaser.Input.Events.POINTER_DOWN, ()=>{
                 this.scene.start(constants.scenes.start);
             }) */

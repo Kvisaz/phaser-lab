@@ -1,4 +1,4 @@
-import { ScrollableContent, ScrollContainer } from '~/helpers/Mask/ScrollContainer';
+import { ScrollableContent, ScrollContainer } from './ScrollContainer';
 
 /**
  *  Не знаю пока почему, но zoom необходим для вычисления смещения ScrollView

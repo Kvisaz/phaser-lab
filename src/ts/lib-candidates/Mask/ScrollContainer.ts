@@ -1,4 +1,4 @@
-import { MaskContainer } from '~/helpers/Mask/MaskContainer';
+import { MaskContainer } from './MaskContainer';
 
 export type ScrollableContent =
   | Phaser.GameObjects.Container
