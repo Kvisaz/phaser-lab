@@ -5,7 +5,7 @@ import { Game } from './scenes/game';
 import { Start } from './scenes/start';
 
 export const gameConfig = {
-  type: Phaser.CANVAS, // Рендерер Canvas более предсказуемый
+  type: Phaser.AUTO, // Рендерер Canvas более предсказуемый
   width: 960, // размеры canvas в pixels
   height: 960,
   pixelArt: false,
