@@ -10,14 +10,17 @@ export class SvgPhaser {
   }
 
   /**
-   *
+   * Метод хорош для одиночных операций
+   * но при массовом применении возникают задержки из-за загрузки картинок
+   * а асинхронный вызов коллбэков приводит к мельканию на экране
+   * и малопредсказуемому порядку появления
    * @param scene {Phaser.Scene}
    * @param svgCode {string } = "<rect width='300' height='100' fill='#daa520' rx='12' ry='12'"
    */
   static createTextureFromSvg(scene: Phaser.Scene, svgCode: string, onCreate: Function) {
-    const blob = new Blob([svgCode], { type: 'image/svg+xml' });
-    const url = URL.createObjectURL(blob);
-    const image = document.createElement('img');
+    let blob = new Blob([svgCode], { type: 'image/svg+xml' });
+    let url = URL.createObjectURL(blob);
+    let image = document.createElement('img');
 
     /* console.log('image', image);
     document.body.appendChild(image); */
@@ -29,6 +32,9 @@ export class SvgPhaser {
         const KEY = SvgPhaser.nextTextureKey; // ключ повторяется
         const texture = scene.textures.addImage(KEY, image);
         onCreate(KEY);
+        image = null;
+        url = null;
+        blob = null;
       },
       { once: true },
     );
