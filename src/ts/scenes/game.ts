@@ -4,6 +4,7 @@ import { SvgGenerator } from '../lib-candidates/svg/SvgGenerator';
 import { SvgPhaser } from '../lib-candidates/svg/SvgPhaser';
 import { ButtonFabric } from '../lib/ButtonFabric';
 import { Svg2TextureScene } from './game/createTextureFromSvg';
+import { Path2dScene } from './game/Path2d';
 
 export class Game extends Phaser.Scene {
   constructor() {
@@ -18,9 +19,7 @@ export class Game extends Phaser.Scene {
 
     const buttons = [
       this.addSceneButton('Svg2Texture', 'Svg2TextureScene', Svg2TextureScene),
-      this.addSceneButton('Svg2Texture', 'Svg2TextureScene', Svg2TextureScene),
-      this.addSceneButton('Svg2Texture', 'Svg2TextureScene', Svg2TextureScene),
-      this.addSceneButton('Svg2Texture', 'Svg2TextureScene', Svg2TextureScene),
+      this.addSceneButton('Path 2d', Path2dScene.key, Path2dScene),
     ];
 
     Phaser.Actions.GridAlign(buttons, {
@@ -33,7 +32,7 @@ export class Game extends Phaser.Scene {
   }
 
   private addSceneButton(text: string, sceneKey: string, sceneClass: new () => Phaser.Scene) {
-    const button = this.add.text(0, 0, 'Svg2Texture', {
+    const button = this.add.text(0, 0, text, {
       fontFamily: 'Verdana',
       fontSize: '32px',
       backgroundColor: 'gold',
