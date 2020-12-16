@@ -21,5 +21,8 @@ export const gameConfig = {
     },
   },
   parent: 'body',
+  dom: {
+    createContainer: true,
+  },
   scene: [Boot, Preload, Start, Game],
 };

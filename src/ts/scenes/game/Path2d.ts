@@ -32,5 +32,19 @@ export class Path2dScene extends Phaser.Scene {
 
   private createContent() {
     this.cameras.main.setBackgroundColor('#DEDEDE');
+
+    const graphics = this.add.graphics();
+    const t = 10;
+    graphics.clear();
+    graphics.fillStyle(0xffff00, 1);
+    graphics.slice(
+      260,
+      300,
+      200,
+      Phaser.Math.DegToRad(330 + t),
+      Phaser.Math.DegToRad(30 - t),
+      true,
+    );
+    graphics.fillPath();
   }
 }

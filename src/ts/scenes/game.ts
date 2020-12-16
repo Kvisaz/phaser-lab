@@ -1,9 +1,9 @@
 import 'phaser';
+
 import { constants } from '../constants';
-import { SvgGenerator } from '../lib-candidates/svg/SvgGenerator';
-import { SvgPhaser } from '../lib-candidates/svg/SvgPhaser';
 import { ButtonFabric } from '../lib/ButtonFabric';
 import { Svg2TextureScene } from './game/createTextureFromSvg';
+import { DomSvgScene } from './game/DomSvgScene';
 import { Path2dScene } from './game/Path2d';
 
 export class Game extends Phaser.Scene {
@@ -19,6 +19,7 @@ export class Game extends Phaser.Scene {
 
     const buttons = [
       this.addSceneButton('Svg2Texture', 'Svg2TextureScene', Svg2TextureScene),
+      this.addSceneButton('Dom Svg', 'DomSvgScene', DomSvgScene),
       this.addSceneButton('Path 2d', Path2dScene.key, Path2dScene),
     ];
 
